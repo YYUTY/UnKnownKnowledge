@@ -1,0 +1,5 @@
+{
+  "all_files":"*.*",
+  "music":"*.mp3;*.wav",
+  "picture":"*.jpg;*.png;"
+}
