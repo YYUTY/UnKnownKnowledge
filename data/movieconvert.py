@@ -51,7 +51,7 @@ class MovieConverts(tk.Frame):
         p.pack()
         ffmpeg_path = os.path.join(va.path, 'ffmpeg\\ffmpeg.exe')
         old_file = self.old_path[0]
-        self.frame_n = subprocess.run([os.path.join(va.path,'ffmpeg//ffprobe.exe'),'-v','error','-select_streams','v:0','-show_entries','stream=nb_frames','-of','default=nokey=1:noprint_wrappers=1',str(old_file)], capture_output=True, text=True).stdout
+        self.frame_n = subprocess.run([os.path.join(va.path,'ffmpeg//ffprobe.exe'),'-v','error','-select_streams','v:0','-show_entries','stream=nb_frames','-of','default=nokey=1:noprint_wrappers=1', str(old_file)], capture_output=True, text=True).stdout
         new_file = os.path.join(self.dir.get(), self.filename)
         self.cmd = ffmpeg_path+' '+'-i'+' '+old_file+' '+new_file
         prog_th = th.Thread(target=self.progress_bar)
@@ -81,7 +81,7 @@ class MovieConverts(tk.Frame):
         return paths
 
     def progress_bar(self):
-        progress = subprocess.Popen(self.cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, universal_newlines=True)
+        progress = subprocess.Popen(self.cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, universal_newlines=True, startupinfo=va.startupinfo)
         for line in progress.stdout:
             line = line.encode('cp932').decode('utf-8')
             sentence = line.split(' ')

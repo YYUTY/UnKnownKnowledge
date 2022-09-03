@@ -28,7 +28,7 @@ class MusicConverts(tk.Frame):
         ffmpeg_path = os.path.join(va.path, 'ffmpeg//ffmpeg.exe')
         old_file = self.old_path[0]
         new_file = os.path.join(self.dir.get(), self.filename)
-        subprocess.call([str(ffmpeg_path), '-i', old_file, new_file])
+        subprocess.call([str(ffmpeg_path), '-i', old_file, new_file], startupinfo=va.startupinfo)
         va.fin.append(True)
 
     def convert_button(self, master):
