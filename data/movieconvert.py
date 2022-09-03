@@ -51,14 +51,14 @@ class MovieConverts(tk.Frame):
         p.pack()
         ffmpeg_path = os.path.join(va.path, 'ffmpeg\\ffmpeg.exe')
         old_file = self.old_path[0]
-        self.frame_n = subprocess.run([os.path.join(va.path,'ffmpeg//ffprobe.exe'),'-v','error','-select_streams','v:0','-show_entries','stream=nb_frames','-of','default=nokey=1:noprint_wrappers=1', str(old_file)], capture_output=True, text=True).stdout
+        self.frame_n = subprocess.run([os.path.join(va.path,'ffprobe.exe'),'-v','error','-select_streams','v:0','-show_entries','stream=nb_frames','-of','default=nokey=1:noprint_wrappers=1', str(old_file)], capture_output=True, text=True).stdout
         new_file = os.path.join(self.dir.get(), self.filename)
         self.cmd = ffmpeg_path+' '+'-i'+' '+old_file+' '+new_file
         prog_th = th.Thread(target=self.progress_bar)
         prog_th.start()
 
     def convert_mus(self):
-        ffmpeg_path = os.path.join(va.path, 'ffmpeg//ffmpeg.exe')
+        ffmpeg_path = os.path.join(va.path, 'ffmpeg.exe')
         old_file = self.old_path[0]
         new_file = os.path.join(self.dir.get(), self.filename)
         subprocess.call([str(ffmpeg_path), '-i', old_file, new_file])
@@ -93,7 +93,7 @@ class MovieConverts(tk.Frame):
                         va.fin.append(True)
 
     def set_dir(self,master):
-        dirframe = ttk.Frame(master, relief = tk.SOLID)
+        dirframe = ttk.Frame(master)
         dirframe.pack()
 
         IDirLabel = ttk.Label(dirframe, text = 'フォルダ参照＞＞', padding = (5, 2))
@@ -109,7 +109,7 @@ class MovieConverts(tk.Frame):
         IDirButton.pack(pady = 10, anchor = tk.NW, side = 'left')
 
     def set_filename(self,master):
-        fileframe = ttk.Frame(master, relief=tk.SOLID)
+        fileframe = ttk.Frame(master)
         fileframe.pack()
 
         IFileLabel = ttk.Label(fileframe, text = '　ファイル名＞＞', padding = (5, 4))
@@ -122,7 +122,7 @@ class MovieConverts(tk.Frame):
         IFileEntry.pack(pady = 6,ipady = 1, anchor = tk.NW, side = 'left')
 
     def set_extension(self, master):
-        self.extension_frame = ttk.Frame(master, relief = tk.SOLID)
+        self.extension_frame = ttk.Frame(master)
         self.extension_frame.pack(pady = 5, anchor = tk.NW, fill = tk.X)
 
         extlabel = ttk.Label(self.extension_frame, text = '拡張子', padding = (5, 4))
