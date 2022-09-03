@@ -1,7 +1,7 @@
 # UnKnownKnowledge
 
 # Index
-- [Installation](installation)
+- [Installation](#installation)
 
 
 ## Installation
