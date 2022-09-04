@@ -22,7 +22,6 @@ def main():
 if __name__ == '__main__':
     data.va.path = os.path.dirname(sys.argv[0])
     root=tk.Tk()
-    data.Menu(root)
     try:
         extension = os.path.splitext(sys.argv[1])[1]
     except:
@@ -34,4 +33,7 @@ if __name__ == '__main__':
             data.MusicConverts(root, sys.argv[1])
         if extension in data.va.movies:
             data.MovieConverts(root, sys.argv[1])
+        if extension in data.va.image:
+            print('ok')
+            data.ImageConverts(root, sys.argv[1])
     main()
