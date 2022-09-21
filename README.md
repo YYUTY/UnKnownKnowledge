@@ -16,4 +16,4 @@ Assetsからインストーラーをダウンロードしてください(特に�
 ![here2](https://user-images.githubusercontent.com/100707322/191525307-711a8a85-9cc7-4be7-b503-f8d5818f5427.png)  
 
 # 使い方
-print
+![use](https://user-images.githubusercontent.com/100707322/191534238-a1e00ced-b15f-43dd-b390-6661b5c5fd0a.png)
