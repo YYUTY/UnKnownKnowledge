@@ -4,6 +4,7 @@ import subprocess
 
 music = ['.mp3','.ogg','.wav']
 image = ['.png','.jpg','.gif']
+imagec = ['.png','.jpg','.gif']
 movies = ['.mp4','.avi']
 movie = ['.mp4','.avi','.ogg','.mp3','.wav']
 path = None

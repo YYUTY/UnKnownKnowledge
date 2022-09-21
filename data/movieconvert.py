@@ -29,7 +29,7 @@ class MovieConverts(tk.Frame):
         self.file.set(self.filename)
 
     def convert(self):
-        if os.path.isfile(os.path.join(self.dir.get(), self.filename)):
+        if os.path.isfile(os.path.join(self.dir.get(), self.file.get())):
             messagebox.showerror('エラー', '同じファイルがすでに存在しています。')
             return
         if '.'+self.extension in va.music:
@@ -52,7 +52,7 @@ class MovieConverts(tk.Frame):
         ffmpeg_path = os.path.join(va.path, 'ffmpeg\\ffmpeg.exe')
         old_file = self.old_path[0]
         self.frame_n = subprocess.run([os.path.join(va.path,'ffprobe.exe'),'-v','error','-select_streams','v:0','-show_entries','stream=nb_frames','-of','default=nokey=1:noprint_wrappers=1', str(old_file)], capture_output=True, text=True).stdout
-        new_file = os.path.join(self.dir.get(), self.filename)
+        new_file = os.path.join(self.dir.get(), self.file.get())
         self.cmd = ffmpeg_path+' '+'-i'+' '+old_file+' '+new_file
         prog_th = th.Thread(target=self.progress_bar)
         prog_th.start()
@@ -60,7 +60,7 @@ class MovieConverts(tk.Frame):
     def convert_mus(self):
         ffmpeg_path = os.path.join(va.path, 'ffmpeg.exe')
         old_file = self.old_path[0]
-        new_file = os.path.join(self.dir.get(), self.filename)
+        new_file = os.path.join(self.dir.get(), self.file.get())
         subprocess.call([str(ffmpeg_path), '-i', old_file, new_file])
         va.fin.append(True)
 

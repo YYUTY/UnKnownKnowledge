@@ -16,7 +16,6 @@ def main():
     root.after(20,update,root)
     root.iconbitmap(default=os.path.join(data.va.path, 'icon.ico'))
     root.title('UnKnownKnowledge')
-    root.geometry('600x150')
     root.mainloop()
 
 if __name__ == '__main__':
@@ -25,7 +24,7 @@ if __name__ == '__main__':
     try:
         extension = os.path.splitext(sys.argv[1])[1]
     except:
-        root.withdraw()
+        root.attributes("-alpha",0)
         messagebox.showerror('エラー', '変換するファイルが選択されていません。')
         sys.exit()
     if not len(sys.argv) == 0:
@@ -34,6 +33,8 @@ if __name__ == '__main__':
         if extension in data.va.movies:
             data.MovieConverts(root, sys.argv[1])
         if extension in data.va.image:
-            print('ok')
+            root.geometry('899x256')
             data.ImageConverts(root, sys.argv[1])
+        else:
+            root.geometry('600x150')
     main()
