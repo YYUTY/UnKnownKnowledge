@@ -1,12 +1,12 @@
 # UnKnownKnowledge
 
-# Index
-- [Installation](#Installation)
-- [How to Use](#How-to-Use)
+# 目次
+- [インストール](#インストール)
+- [使い方](#使い方)
 
 
-## Installation
+## インストール
 Install
 
-## How to Use
+## 使い方
 print
