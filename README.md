@@ -20,6 +20,6 @@ Assetsからインストーラーをダウンロードしてください
 (特に理由がなければ最新版をお勧めします)
 
 # 使い方
-拡張子を変換したいファイルを右クリックし「UnKnownKnowledge」を選択
+拡張子を変換したいファイルを右クリックし「UnKnownKnowledge」を選択  
 ※Windows 11の設定の初期設定では「その他のオプション」を選択しなければなりません。
 ![use](https://user-images.githubusercontent.com/100707322/191534238-a1e00ced-b15f-43dd-b390-6661b5c5fd0a.png)
