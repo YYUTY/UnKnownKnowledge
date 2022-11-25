@@ -28,6 +28,8 @@ Assetsからインストーラーをダウンロードしてください
 ![here2](https://user-images.githubusercontent.com/100707322/191525307-711a8a85-9cc7-4be7-b503-f8d5818f5427.png)  
 (特に理由がなければ最新版をお勧めします)
 
+インストールしたディレクトリにFFmpeg.exe、FFprobe.exe、FFplay.exeを入れます。
+
 # 使い方
 拡張子を変換したいファイルを右クリックし「UnKnownKnowledge」を選択  
 ※Windows 11の初期設定では「その他のオプション」を選択しなければなりません。
